@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Romantic Proposal ❤️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="big-heart">❤️</div>
+
+<div id="hearts"></div>
+
+<audio autoplay loop>
+    <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mp3">
+</audio>
+
+<div class="box">
+
+    <h1>❤️ Will You Be Mine Forever? ❤️</h1>
+
+    <p>
+        Every moment with you feels magical ✨
+    </p>
+
+    <a href="/memories">
+        <button class="yes">
+            Start Journey ❤️
+        </button>
+    </a>
+
+</div>
+
+<div id="popup">
+    <h2>🥰 Thank You ❤️</h2>
+    <p>You made my day!</p>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(
+    -45deg,
+    #ff006e,
+    #ff4d6d,
+    #ff758f,
+    #ff85a1,
+    #c9184a);
+
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+.box{
+
+    width:85%;
+    max-width:850px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:40px;
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.4),
+    0 0 60px rgba(255,105,180,.5),
+    0 0 120px rgba(255,20,147,.4);
+
+    color:white;
+
+    animation:cardGlow 3s infinite;
+}
+
+@keyframes cardGlow{
+
+    0%{
+        box-shadow:
+        0 0 20px pink;
+    }
+
+    50%{
+        box-shadow:
+        0 0 50px hotpink,
+        0 0 100px deeppink;
+    }
+
+    100%{
+        box-shadow:
+        0 0 20px pink;
+    }
+}
+
+.big-heart{
+
+    position:absolute;
+
+    top:20px;
+
+    font-size:120px;
+
+    animation:heartbeat 1s infinite;
+
+    filter:
+    drop-shadow(0 0 20px red)
+    drop-shadow(0 0 40px pink);
+}
+
+@keyframes heartbeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+h1{
+
+    font-size:4rem;
+
+    margin-bottom:20px;
+
+    text-shadow:
+      0 0 10px white,
+      0 0 20px pink,
+      0 0 40px pink,
+      0 0 80px deeppink;
+}
+
+p{
+
+    font-size:1.4rem;
+
+    line-height:1.8;
+
+    margin-bottom:20px;
+}
+
+button{
+
+    margin:15px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.yes{
+
+    background:linear-gradient(
+    45deg,
+    #00ff99,
+    #00ffd5);
+
+    color:black;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 0 20px #00ff99,
+    0 0 40px #00ff99;
+}
+
+.yes:hover{
+
+    transform:translateY(-5px) scale(1.1);
+
+    box-shadow:
+    0 0 60px #00ff99,
+    0 0 120px #00ff99;
+}
+
+.no{
+
+    background:#ff1744;
+
+    color:white;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 0 20px red,
+    0 0 40px red;
+}
+
+.no:hover{
+
+    transform:scale(1.1);
+}
+
+#popup{
+
+    display:none;
+
+    position:fixed;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:white;
+
+    color:black;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    z-index:999;
+
+    box-shadow:
+    0 0 30px pink,
+    0 0 80px hotpink;
+}
+
+img{
+
+    border-radius:20px;
+
+    box-shadow:
+    0 0 25px pink;
+
+    transition:.5s;
+}
+
+img:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 60px deeppink;
+}
+
+.heart{
+
+    position:absolute;
+
+    color:white;
+
+    animation:floatUp linear infinite;
+
+    opacity:.9;
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:
+        translateY(100vh)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+    }
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.4rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    .big-heart{
+        font-size:80px;
+    }
+
+    .box{
+        width:95%;
+        padding:20px;
+    }
+}
+.shayari{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 20px pink,
+    0 0 40px hotpink;
+
+}
+
+.shayari span{
+
+    display:inline-block;
+
+    opacity:0;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    border-right:3px solid white;
+}
+
+.line1{
+    animation:type 3s steps(40) forwards;
+}
+
+.line2{
+    animation:type 3s steps(40) forwards;
+    animation-delay:3s;
+}
+
+.line3{
+    animation:type 3s steps(40) forwards;
+    animation-delay:6s;
+}
+
+.line4{
+    animation:type 3s steps(40) forwards;
+    animation-delay:9s;
+}
+
+@keyframes type{
+
+    from{
+        width:0;
+        opacity:1;
+    }
+
+    to{
+        width:100%;
+        opacity:1;
+    }
+}
+.love-lines{
+
+margin-top:30px;
+
+}
+
+.msg{
+
+opacity:0;
+
+font-size:30px;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:
+0 0 10px white,
+0 0 20px pink,
+0 0 40px deeppink;
+
+animation:showLine 2s forwards;
+
+margin:20px;
+}
+
+.msg:nth-child(1){animation-delay:1s;}
+.msg:nth-child(2){animation-delay:3s;}
+.msg:nth-child(3){animation-delay:5s;}
+.msg:nth-child(4){animation-delay:7s;}
+.msg:nth-child(5){animation-delay:9s;}
+.msg:nth-child(6){animation-delay:11s;}
+.msg:nth-child(7){animation-delay:13s;}
+
+@keyframes showLine{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
